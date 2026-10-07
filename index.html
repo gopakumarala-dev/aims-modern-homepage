@@ -1,1 +1,928 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AIMS Portal - Indian Railways</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --rail-blue: #073b67;
+    --rail-blue-dark: #052a4a;
+    --rail-red: #c62828;
+    --rail-orange: #e98b24;
+    --light: #f4f7fa;
+    --text: #172536;
+    --muted: #64748b;
+    --white: #ffffff;
+    --border: #dce4ec;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* TOP GOVERNMENT BAR */
+
+.topbar {
+    background: #062d4f;
+    color: white;
+    padding: 7px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.top-links {
+    display: flex;
+    gap: 20px;
+}
+
+.top-links a:hover {
+    text-decoration: underline;
+}
+
+/* HEADER */
+
+.header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.emblem {
+    width: 62px;
+    height: 62px;
+    border: 3px solid var(--rail-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rail-blue);
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.brand-title {
+    color: var(--rail-blue);
+}
+
+.brand-title h1 {
+    font-size: 27px;
+    letter-spacing: .3px;
+}
+
+.brand-title p {
+    color: #65758b;
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+.language-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tool {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 7px 11px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.tool:hover {
+    background: #f1f5f9;
+}
+
+/* NAVIGATION */
+
+.nav {
+    background: var(--rail-blue);
+}
+
+.nav-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav a {
+    color: white;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    background: rgba(255,255,255,.12);
+}
+
+.nav .active {
+    background: var(--rail-red);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 390px;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg,
+            rgba(3,31,55,.95) 0%,
+            rgba(3,31,55,.75) 42%,
+            rgba(3,31,55,.18) 78%,
+            rgba(3,31,55,.35) 100%),
+        url("images/chenab-vande-bharat.jpg") center center / cover no-repeat,
+        linear-gradient(135deg,#0a426e,#1b6d94);
+}
+
+.hero-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 65px 5%;
+    color: white;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.25);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    max-width: 600px;
+    font-size: 43px;
+    line-height: 1.12;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 610px;
+    font-size: 17px;
+    color: #e5eef6;
+}
+
+.hero-buttons {
+    margin-top: 28px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    background: white;
+    color: var(--rail-blue);
+}
+
+.hero-button.red {
+    background: var(--rail-red);
+    color: white;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 45px 5%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 27px;
+    color: var(--rail-blue);
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* SERVICE CARDS */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    min-height: 190px;
+    transition: .2s;
+    box-shadow: 0 3px 12px rgba(15,40,60,.04);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(15,40,60,.10);
+    border-color: #b8c9d9;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #e9f2f9;
+    color: var(--rail-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+.card h3 {
+    color: var(--rail-blue);
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.card-link {
+    color: var(--rail-red);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* INFORMATION GRID */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 22px;
+    margin-top: 42px;
+}
+
+.panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 18px 22px;
+    background: #f7fafc;
+    border-bottom: 1px solid var(--border);
+}
+
+.panel-header h3 {
+    color: var(--rail-blue);
+    font-size: 19px;
+}
+
+.panel-body {
+    padding: 8px 22px;
+}
+
+.list-link {
+    display: block;
+    padding: 14px 3px;
+    border-bottom: 1px solid #edf1f5;
+    color: #334155;
+    font-size: 14px;
+}
+
+.list-link:last-child {
+    border-bottom: 0;
+}
+
+.list-link:hover {
+    color: var(--rail-red);
+}
+
+/* ALERT */
+
+.alert {
+    margin-top: 30px;
+    border-radius: 12px;
+    padding: 22px 25px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.alert-icon {
+    font-size: 25px;
+}
+
+.alert h3 {
+    color: #9a3412;
+    margin-bottom: 5px;
+}
+
+.alert p {
+    color: #7c2d12;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 20px;
+    background: #062d4f;
+    color: #dbe7f1;
+}
+
+.footer-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 35px 5%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer p,
+.footer a {
+    color: #c5d4e1;
+    font-size: 13px;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.12);
+    padding: 14px 5%;
+    text-align: center;
+    font-size: 12px;
+    color: #a9bdcd;
+}
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .topbar {
+        display: none;
+    }
+
+    .header-inner {
+        padding: 14px 5%;
+    }
+
+    .brand-title h1 {
+        font-size: 20px;
+    }
+
+    .brand-title p {
+        font-size: 12px;
+    }
+
+    .emblem {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .language-tools {
+        display: none;
+    }
+
+    .nav-inner {
+        overflow-x: auto;
+    }
+
+    .nav a {
+        white-space: nowrap;
+        padding: 13px 15px;
+    }
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <div>Government of India • Ministry of Railways</div>
+
+    <div class="top-links">
+        <a href="#">Skip to main content</a>
+        <a href="#">Accessibility</a>
+        <a href="#">हिन्दी</a>
+        <a href="#">English</a>
+    </div>
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="brand">
+
+            <div class="emblem">
+                IR
+            </div>
+
+            <div class="brand-title">
+                <h1>Indian Railways</h1>
+                <p>Accounts &amp; Finance Portal</p>
+            </div>
+
+        </div>
+
+        <div class="language-tools">
+
+            <button class="tool">A−</button>
+            <button class="tool">A</button>
+            <button class="tool">A+</button>
+            <button class="tool">English</button>
+            <button class="tool">हिन्दी</button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+
+    <div class="nav-inner">
+
+        <a class="active" href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#quick-access">Quick Access</a>
+        <a href="#circulars">Circulars</a>
+        <a href="#security">Security</a>
+        <a href="https://aims.indianrailways.gov.in/Public/Ress">RESS</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-label">
+            INDIAN RAILWAYS • ACCOUNTS &amp; FINANCE
+        </div>
+
+        <h2>
+            A modern gateway to
+            Railway Accounts &amp; Finance
+        </h2>
+
+        <p>
+            Access AIMS, IPAS, RESS, ARPAN and other
+            essential services through a single, secure portal.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="hero-button"
+               href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp">
+                Open AIMS / IPAS
+            </a>
+
+            <a class="hero-button red"
+               href="https://aims.indianrailways.gov.in/IPASDW/LoginForms/Login.jsp">
+                Data Warehouse
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<main class="container" id="services">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Important Services</h2>
+            <p>Quick access to major AIMS applications and services</p>
+        </div>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <!-- IPAS -->
+
+        <a class="card"
+           href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp">
+
+            <div class="card-icon">IP</div>
+
+            <h3>AIMS / IPAS</h3>
+
+            <p>
+                Integrated Payroll and Accounting System
+                for Indian Railways.
+            </p>
+
+            <span class="card-link">Access Application →</span>
+
+        </a>
+
+
+        <!-- DATA WAREHOUSE -->
+
+        <a class="card"
+           href="https://aims.indianrailways.gov.in/IPASDW/LoginForms/Login.jsp">
+
+            <div class="card-icon">DW</div>
+
+            <h3>Data Warehouse</h3>
+
+            <p>
+                Access the AIMS Data Warehouse
+                reporting environment.
+            </p>
+
+            <span class="card-link">Access Data Warehouse →</span>
+
+        </a>
+
+
+        <!-- RESS -->
+
+        <a class="card"
+           href="http://aims.indianrailways.gov.in/ress">
+
+            <div class="card-icon">R</div>
+
+            <h3>RESS</h3>
+
+            <p>
+                Railway Employee Self Service
+                for railway employees.
+            </p>
+
+            <span class="card-link">Open RESS →</span>
+
+        </a>
+
+
+        <!-- ARPAN -->
+
+        <a class="card"
+           href="https://aims.indianrailways.gov.in/Public/Arpan">
+
+            <div class="card-icon">A</div>
+
+            <h3>ARPAN</h3>
+
+            <p>
+                Access the Railway pension and
+                related services.
+            </p>
+
+            <span class="card-link">Open ARPAN →</span>
+
+        </a>
+
+
+        <!-- RESS MOBILE -->
+
+        <a class="card"
+           href="https://aims.indianrailways.gov.in/Public/Ress">
+
+            <div class="card-icon">M</div>
+
+            <h3>RESS Mobile</h3>
+
+            <p>
+                Railway Employee Self Service
+                mobile access.
+            </p>
+
+            <span class="card-link">Open Mobile Portal →</span>
+
+        </a>
+
+
+        <!-- SUPPLIER BILL -->
+
+        <a class="card"
+           href="https://aims.indianrailways.gov.in/MiscRpt/CO6ComplianceController">
+
+            <div class="card-icon">₹</div>
+
+            <h3>Supplier Bill Status</h3>
+
+            <p>
+                Check supplier bill and CO6
+                compliance status.
+            </p>
+
+            <span class="card-link">Check Status →</span>
+
+        </a>
+
+
+        <!-- RESS ANDROID -->
+
+        <a class="card"
+           href="https://play.google.com/store/apps/details?id=cris.org.in.ress">
+
+            <div class="card-icon">▶</div>
+
+            <h3>RESS Android</h3>
+
+            <p>
+                Official RESS application
+                for Android devices.
+            </p>
+
+            <span class="card-link">Google Play →</span>
+
+        </a>
+
+
+        <!-- RESS IOS -->
+
+        <a class="card"
+           href="https://aims.indianrailways.gov.in/Public/Ress">
+
+            <div class="card-icon">iOS</div>
+
+            <h3>RESS iOS</h3>
+
+            <p>
+                Access RESS services from
+                Apple devices.
+            </p>
+
+            <span class="card-link">Open RESS →</span>
+
+        </a>
+
+    </div>
+
+
+    <!-- QUICK ACCESS -->
+
+    <div class="info-grid" id="quick-access">
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <h3>Quick Access</h3>
+            </div>
+
+            <div class="panel-body">
+
+                <a class="list-link"
+                   href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,5,377">
+                    Codes &amp; Manuals →
+                </a>
+
+                <a class="list-link"
+                   href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?id=0,1,304,366,390">
+                    Circulars — Establishment →
+                </a>
+
+                <a class="list-link"
+                   href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,1,304,366,498">
+                    Circulars — Accounts →
+                </a>
+
+                <a class="list-link"
+                   href="https://pgportal.gov.in">
+                    Public Grievances →
+                </a>
+
+                <a class="list-link"
+                   href="http://india.gov.in/">
+                    India.gov.in →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIRCULARS -->
+
+        <section class="panel" id="circulars">
+
+            <div class="panel-header">
+                <h3>Latest Information</h3>
+            </div>
+
+            <div class="panel-body">
+
+                <a class="list-link" href="#">
+                    Railway Accounts &amp; Finance updates →
+                </a>
+
+                <a class="list-link" href="#">
+                    Important notices and circulars →
+                </a>
+
+                <a class="list-link" href="#">
+                    AIMS system information →
+                </a>
+
+                <a class="list-link" href="#">
+                    Training and user resources →
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- SECURITY WARNING -->
+
+    <section class="alert" id="security">
+
+        <div class="alert-icon">⚠</div>
+
+        <div>
+
+            <h3>Beware of Fraudulent Websites</h3>
+
+            <p>
+                Users are advised to access AIMS services only through
+                official Indian Railways / AIMS websites. Do not enter
+                personal or official credentials on suspicious websites.
+                Report suspicious websites or security concerns to CRIS.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+        <div>
+            <h3>Indian Railways</h3>
+
+            <p>
+                Accounts &amp; Finance Portal (AIMS)
+            </p>
+
+            <p style="margin-top:10px;">
+                A modern design proposal for the existing
+                Indian Railways AIMS homepage.
+            </p>
+        </div>
+
+        <div>
+            <h3>Important Links</h3>
+
+            <p><a href="https://www.indianrailways.gov.in/">
+                Indian Railways
+            </a></p>
+
+            <p><a href="https://pgportal.gov.in">
+                Public Grievances
+            </a></p>
+
+            <p><a href="http://india.gov.in/">
+                India.gov.in
+            </a></p>
+        </div>
+
+        <div>
+            <h3>AIMS Services</h3>
+
+            <p><a href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp">
+                AIMS / IPAS
+            </a></p>
+
+            <p><a href="https://aims.indianrailways.gov.in/IPASDW/LoginForms/Login.jsp">
+                Data Warehouse
+            </a></p>
+
+            <p><a href="https://aims.indianrailways.gov.in/Public/Ress">
+                RESS
+            </a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © Indian Railways • Accounts &amp; Finance Portal • AIMS
+    </div>
+
+</footer>
+
+</body>
+</html>
