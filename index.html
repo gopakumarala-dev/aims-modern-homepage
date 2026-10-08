@@ -936,7 +936,9 @@ body{
               Member Finance<br>
               Indian Railways
             </div>
-            <button class="message" type="button">✉&nbsp; Message</button>
+               <button class="message" type="button" onclick="openMessagePopup()">
+                 ✉&nbsp; Message
+               </button>
           </div>
         </section>
 
@@ -1014,6 +1016,48 @@ body{
   </footer>
 
 </div>
+<!-- MESSAGE POPUP -->
+<div id="messagePopup" class="message-overlay" onclick="closeMessagePopup(event)">
+  <div class="message-popup" role="dialog" aria-modal="true" aria-labelledby="messageTitle">
 
+    <button class="popup-close" type="button" onclick="closeMessagePopup()">
+      ×
+    </button>
+
+    <div class="popup-header">
+      <img src="images/member-finance.png" alt="Ms. Manjusha Jain">
+      <div>
+        <h3 id="messageTitle">Message from Member Finance</h3>
+        <p>Ms. Manjusha Jain</p>
+        <small>Member Finance, Indian Railways</small>
+      </div>
+    </div>
+
+    <div class="popup-content">
+      <p>
+        Welcome to the Indian Railways Accounts &amp; Finance Portal.
+      </p>
+
+      <p>
+        The Accounts &amp; Finance Portal provides digital access to
+        important financial systems, employee services and resources
+        of Indian Railways.
+      </p>
+
+      <p class="popup-sign">
+        <strong>Ms. Manjusha Jain</strong><br>
+        Member Finance<br>
+        Indian Railways
+      </p>
+    </div>
+
+    <div class="popup-footer">
+      <button type="button" class="popup-ok" onclick="closeMessagePopup()">
+        Close
+      </button>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>
