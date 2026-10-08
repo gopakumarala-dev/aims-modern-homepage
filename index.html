@@ -59,10 +59,11 @@ button{font-family:inherit;cursor:pointer}
   background:#dff1f8;
 }
 .hero::before{
-  content:"";position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(225,245,253,.97) 0%,rgba(225,245,253,.90) 28%,rgba(225,245,253,.42) 49%,rgba(225,245,253,.05) 72%,rgba(225,245,253,0) 100%),
-    url("images/aims-hero-banner.png") center center/cover no-repeat;
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/aims-hero-banner.png") center center/cover no-repeat;
+}
 }
 .hero-inner{
   position:relative;z-index:2;max-width:1240px;height:100%;margin:auto;
@@ -215,17 +216,17 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="hero-kicker">INDIAN RAILWAYS · ACCOUNTS &amp; FINANCE</div>
-      <h1>Accounts &amp; Finance Portal</h1>
-      <h2>Indian Railways</h2>
-      <p>Enabling efficient, transparent and digital financial management across Indian Railways</p>
-      <div class="values">
-        <span>PEOPLE</span><span>SAFETY</span><span>SERVICE</span><span>GROWTH</span><span>SUSTAINABILITY</span>
-      </div>
+<div class="hero-inner">
+  <div class="hero-copy">
+    <div class="hero-kicker">INDIAN RAILWAYS · ACCOUNTS &amp; FINANCE</div>
+    <h1>Accounts &amp; Finance Portal</h1>
+    <h2>Indian Railways</h2>
+    <p>Enabling efficient, transparent and digital financial management across Indian Railways</p>
+    <div class="values">
+      <span>PEOPLE</span><span>SAFETY</span><span>SERVICE</span><span>GROWTH</span><span>SUSTAINABILITY</span>
     </div>
+  </div>
+</div>
   </div>
 </section>
 
