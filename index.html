@@ -183,87 +183,25 @@ a{
 
 /* HERO */
 .hero{
-  height:220px;
+  width:100%;
+  aspect-ratio:1478 / 185;
+  min-height:185px;
+  max-height:240px;
   position:relative;
   overflow:hidden;
   background:#dceefa;
 }
 
-.hero-image{
-  position:absolute;
-  inset:0;
+.hero-banner{
   width:100%;
   height:100%;
+  display:block;
   object-fit:cover;
-  object-position:center 54%;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg,
-      rgba(235,248,255,.98) 0%,
-      rgba(235,248,255,.90) 18%,
-      rgba(235,248,255,.56) 32%,
-      rgba(235,248,255,.05) 55%,
-      rgba(0,0,0,0) 100%);
-}
-
-.hero-content{
-  max-width:1660px;
-  margin:auto;
-  position:relative;
-  z-index:2;
-  height:100%;
-  padding:34px 0 0 68px;
-}
-
-.hero-title{
-  color:#06458f;
-  font-size:36px;
-  line-height:1.05;
-  font-weight:800;
-  margin:0;
-}
-
-.hero-sub{
-  color:#2f3d4b;
-  font-size:25px;
-  margin-top:4px;
-}
-
-.hero-desc{
-  width:455px;
-  color:#243b52;
-  font-size:16px;
-  line-height:1.35;
-  margin-top:10px;
-}
-
-.hero-bars{
-  display:flex;
-  width:455px;
-  height:6px;
-  margin-top:11px;
-  gap:0;
-}
-
-.hero-bars span:nth-child(1){background:#f6a400;flex:1}
-.hero-bars span:nth-child(2){background:#16a55a;flex:1}
-.hero-bars span:nth-child(3){background:#ef3434;flex:1}
-.hero-bars span:nth-child(4){background:#0875d1;flex:1}
-
-.hero-values{
-  margin-top:8px;
-  color:#0a3d76;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.4px;
+  object-position:center;
 }
 
 /* MAIN */
+
 .main{
   max-width:1660px;
   margin:0 auto;
@@ -580,10 +518,14 @@ a{
 }
 
 @media(max-width:1000px){
+  .hero{
+    aspect-ratio:1478 / 185;
+    min-height:150px;
+  }
+
   .header-inner{padding-left:20px}
   .nav-inner{padding-left:20px;overflow-x:auto}
   .nav a{padding:0 15px;white-space:nowrap}
-  .hero-content{padding-left:30px}
   .main{padding-left:20px;padding-right:20px}
   .dashboard{grid-template-columns:1fr}
   .right-col{display:grid;grid-template-columns:1fr 1fr}
@@ -599,12 +541,6 @@ a{
   .brand-main{font-size:20px}
   .brand-sub{font-size:13px}
   .emblem{display:none}
-  .hero{height:260px}
-  .hero-content{padding:25px 18px}
-  .hero-title{font-size:28px}
-  .hero-sub{font-size:20px}
-  .hero-desc{width:85%;font-size:14px}
-  .hero-bars{width:80%}
   .right-col{display:block}
   .member{margin-bottom:10px}
   .footer-bottom{height:auto;grid-template-columns:1fr;padding:8px;text-align:center;gap:5px}
@@ -660,26 +596,15 @@ a{
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-image" src="images/chenab-vande-bharat.jpg" alt="Vande Bharat train crossing Chenab Bridge">
-
-  <div class="hero-content">
-    <h1 class="hero-title">Accounts &amp; Finance Portal</h1>
-    <div class="hero-sub">Indian Railways</div>
-    <div class="hero-desc">
-      Enabling efficient, transparent and digital financial management across Indian Railways
-    </div>
-
-    <div class="hero-bars">
-      <span></span><span></span><span></span><span></span>
-    </div>
-
-    <div class="hero-values">
-      PEOPLE &nbsp;|&nbsp; SAFETY &nbsp;|&nbsp; SERVICE &nbsp;|&nbsp; GROWTH &nbsp;|&nbsp; SUSTAINABILITY
-    </div>
-  </div>
+  <img
+    class="hero-banner"
+    src="images/aims-hero-banner.png"
+    alt="Indian Railways Accounts & Finance Portal"
+  >
 </section>
 
 <!-- MAIN CONTENT -->
+
 <main class="main">
 
   <div class="dashboard">
