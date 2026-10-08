@@ -2,782 +2,880 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIMS Portal - Indian Railways</title>
 
 <style>
 :root{
-  --blue:#07559a;
-  --blue-dark:#063c70;
-  --blue-deep:#032e5a;
-  --red:#d71920;
-  --gold:#f3b51b;
-  --text:#083d70;
-  --muted:#66788a;
-  --line:#d7e2ea;
-  --bg:#f3f7fa;
-  --white:#fff;
+  --blue:#0053a6;
+  --dark:#063568;
+  --nav:#062f5b;
+  --orange:#ff9d00;
+  --red:#e51d25;
+  --text:#12385f;
+  --muted:#66798c;
+  --line:#d8e2ec;
+  --bg:#f3f6f9;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:"Segoe UI",Arial,sans-serif;
-  color:var(--text);
-  background:#eef3f7;
-  font-size:14px;
-}
-a{text-decoration:none;color:inherit}
-.container{width:min(1440px,94vw);margin:auto}
 
-/* GOVERNMENT STRIP */
-.gov{
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  font-family:"Segoe UI",Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.top-strip{
   height:34px;
-  background:#f8fbfd;
-  border-top:1px solid #d9a331;
+  background:#eaf6fc;
   border-bottom:1px solid #d4e0e8;
 }
-.gov .container{
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.gov-left{
-  display:flex;
-  gap:9px;
-  align-items:center;
-  font-size:12px;
-  color:#243b4d;
-}
-.gov-left strong{color:#172b3d}
-.gov-right{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:11px;
-  color:#243b4d;
-}
-.gov-right button,.gov-right a{
-  border:0;background:none;padding:2px 3px;color:inherit;cursor:pointer;
-}
-.gov-right button:hover,.gov-right a:hover{color:var(--red)}
-.emblem{height:30px;width:auto;margin-left:5px}
 
-/* BLUE MASTHEAD */
-.masthead{
-  height:85px;
-  background:
-    linear-gradient(135deg,#075ca4 0%,#07549a 55%,#034b8b 100%);
-  border-bottom:1px solid rgba(255,255,255,.25);
-  color:#fff;
-}
-.masthead .container{
+.top-inner{
+  max-width:1660px;
+  margin:auto;
   height:100%;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  padding:0 28px;
+  font-size:13px;
+  color:#172b3d;
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.logo{
-  width:69px;
-  height:69px;
-  object-fit:contain;
-}
-.brand h1{
-  margin:0;
-  color:#fff;
-  font-size:27px;
-  line-height:1;
-  letter-spacing:.4px;
-}
-.brand h2{
-  margin:5px 0 0;
-  color:#fff;
-  font-size:14px;
-  text-transform:uppercase;
-  letter-spacing:.9px;
+
+.gov-text{
   font-weight:500;
 }
 
-/* NAVIGATION */
-.navbar{
-  height:39px;
-  background:var(--blue-deep);
-  border-bottom:1px solid #d7a51a;
+.gov-text strong{
+  font-weight:700;
 }
-.navbar .container{
+
+.access{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:12px;
+}
+
+.access button,
+.access a{
+  border:0;
+  background:transparent;
+  color:#18324c;
+  cursor:pointer;
+  padding:2px 3px;
+}
+
+.access button:hover,
+.access a:hover{
+  color:var(--blue);
+}
+
+/* HEADER */
+.header{
+  background:linear-gradient(110deg,#0753a0 0%,#0067b9 58%,#064e99 100%);
+  height:86px;
+  border-bottom:1px solid rgba(255,255,255,.45);
+  position:relative;
+  overflow:hidden;
+}
+
+.header:after{
+  content:"";
+  position:absolute;
+  right:-100px;
+  top:-100px;
+  width:560px;
+  height:250px;
+  transform:rotate(-12deg);
+  background:linear-gradient(135deg,transparent 35%,rgba(255,255,255,.08) 36%,transparent 62%);
+}
+
+.header-inner{
+  max-width:1660px;
+  height:100%;
+  margin:auto;
+  padding:0 50px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.ir-logo{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+  margin-right:12px;
+}
+
+.brand{
+  color:#fff;
+  line-height:1.02;
+}
+
+.brand-main{
+  font-size:29px;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+
+.brand-sub{
+  font-size:19px;
+  font-weight:500;
+  letter-spacing:.2px;
+  margin-top:5px;
+}
+
+/* EMBLEM */
+.emblem{
+  position:absolute;
+  right:42px;
+  top:-2px;
+  height:91px;
+  width:auto;
+  object-fit:contain;
+}
+
+/* NAVIGATION */
+.nav{
+  height:40px;
+  background:linear-gradient(#073d73,#052e58);
+  border-bottom:1px solid #ffad00;
+}
+
+.nav-inner{
+  max-width:1660px;
+  margin:auto;
+  padding-left:68px;
   height:100%;
   display:flex;
   align-items:stretch;
 }
-.nav{
-  display:flex;
-  list-style:none;
-  padding:0;
-  margin:0;
-}
+
 .nav a{
-  height:39px;
-  padding:0 25px;
+  color:#fff;
+  padding:0 28px;
   display:flex;
   align-items:center;
-  color:#fff;
-  font-size:12px;
-  font-weight:600;
-  border-right:1px solid rgba(255,255,255,.08);
+  font-size:14px;
+  border-right:1px solid rgba(255,255,255,.07);
 }
-.nav a:hover{background:#0b4d84}
+
+.nav a:hover{
+  background:#0a4b87;
+}
+
 .nav a.active{
-  background:#ffae00;
+  background:#ff9e08;
   color:#fff;
-  box-shadow:inset 0 -3px 0 #fff;
+  font-weight:700;
 }
 
 /* HERO */
 .hero{
+  height:220px;
   position:relative;
-  height:210px;
   overflow:hidden;
-  background:#dceef8 url("images/chenab-vande-bharat.jpg") center center/cover no-repeat;
+  background:#dceefa;
 }
-.hero:before{
+
+.hero-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 54%;
+}
+
+.hero:after{
   content:"";
   position:absolute;
   inset:0;
   background:
     linear-gradient(90deg,
-      rgba(228,247,255,.98) 0%,
-      rgba(225,245,254,.94) 22%,
-      rgba(225,245,254,.58) 40%,
-      rgba(225,245,254,.10) 61%,
-      rgba(0,0,0,.04) 100%);
+      rgba(235,248,255,.98) 0%,
+      rgba(235,248,255,.90) 18%,
+      rgba(235,248,255,.56) 32%,
+      rgba(235,248,255,.05) 55%,
+      rgba(0,0,0,0) 100%);
 }
-.hero .container{
+
+.hero-content{
+  max-width:1660px;
+  margin:auto;
+  position:relative;
+  z-index:2;
   height:100%;
-  position:relative;
-  display:flex;
-  align-items:center;
+  padding:34px 0 0 68px;
 }
-.hero-copy{
-  width:58%;
-  padding-left:14px;
-  position:relative;
-  z-index:2;
-}
-.hero-copy h3{
-  margin:0 0 3px;
-  color:#084b89;
-  font-size:31px;
-  line-height:1.08;
-  font-weight:700;
-}
-.hero-copy h4{
-  margin:0 0 9px;
-  color:#314b62;
-  font-size:21px;
-  line-height:1.1;
-  font-weight:500;
-}
-.hero-copy p{
-  max-width:510px;
-  margin:0;
-  color:#385b73;
-  font-size:13px;
-  line-height:1.35;
-}
-.values{
-  margin-top:11px;
-  display:flex;
-  align-items:center;
-  gap:0;
-  width:max-content;
-}
-.values span{
-  font-size:10px;
+
+.hero-title{
+  color:#06458f;
+  font-size:36px;
+  line-height:1.05;
   font-weight:800;
-  color:#06467f;
-  padding:0 10px;
-  border-left:1px solid #57738a;
+  margin:0;
 }
-.values span:first-child{padding-left:0;border-left:0}
-.value-bars{
+
+.hero-sub{
+  color:#2f3d4b;
+  font-size:25px;
+  margin-top:4px;
+}
+
+.hero-desc{
+  width:455px;
+  color:#243b52;
+  font-size:16px;
+  line-height:1.35;
+  margin-top:10px;
+}
+
+.hero-bars{
   display:flex;
-  height:5px;
-  width:440px;
+  width:455px;
+  height:6px;
+  margin-top:11px;
+  gap:0;
+}
+
+.hero-bars span:nth-child(1){background:#f6a400;flex:1}
+.hero-bars span:nth-child(2){background:#16a55a;flex:1}
+.hero-bars span:nth-child(3){background:#ef3434;flex:1}
+.hero-bars span:nth-child(4){background:#0875d1;flex:1}
+
+.hero-values{
   margin-top:8px;
-}
-.value-bars i{display:block;flex:1}
-.value-bars i:nth-child(1){background:#f5ad13}
-.value-bars i:nth-child(2){background:#16a05d}
-.value-bars i:nth-child(3){background:#e32b31}
-.value-bars i:nth-child(4){background:#1976c5}
-.value-bars i:nth-child(5){background:#3c91ca}
-.hero-screen{
-  position:absolute;
-  right:3%;
-  bottom:8px;
-  width:250px;
-  z-index:2;
-}
-.hero-screen img{
-  width:100%;
-  height:auto;
-  filter:drop-shadow(0 8px 8px rgba(0,0,0,.28));
+  color:#0a3d76;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.4px;
 }
 
 /* MAIN */
-main{
-  padding:10px 0 10px;
-  background:#f4f7fa;
-}
-.grid{
-  display:grid;
-  grid-template-columns:1.04fr .98fr .72fr;
-  gap:14px;
-  align-items:stretch;
-}
-.panel{
-  background:#fff;
-  border:1px solid #d5e0e8;
-  border-radius:6px;
-  overflow:hidden;
-  box-shadow:0 2px 9px rgba(11,58,91,.08);
-}
-.panel-head{
-  min-height:39px;
-  padding:0 14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:2px solid #0b4f87;
-}
-.panel-head h2{
-  margin:0;
-  color:#083f73;
-  font-size:14px;
-}
-.panel-head a{
-  color:#d71920;
-  font-size:10px;
-  font-weight:700;
+.main{
+  max-width:1660px;
+  margin:0 auto;
+  padding:10px 58px 12px;
 }
 
-/* PORTALS */
-.service{
-  min-height:57px;
+.dashboard{
+  display:grid;
+  grid-template-columns:1.1fr 1fr .78fr;
+  gap:12px;
+  align-items:stretch;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #d8e1e9;
+  border-radius:7px;
+  overflow:hidden;
+  box-shadow:0 2px 7px rgba(17,52,82,.08);
+}
+
+.card-title{
+  height:46px;
   display:flex;
   align-items:center;
-  gap:11px;
-  padding:7px 12px;
-  border-bottom:1px solid #e2e9ee;
-}
-.service:last-child{border-bottom:0}
-.service:hover{background:#f8fbfd}
-.service-icon{
-  width:45px;
-  height:43px;
-  flex:0 0 45px;
-  display:grid;
-  place-items:center;
-  color:#0965a6;
-  font-size:9px;
+  padding:0 16px;
+  border-bottom:2px solid #07509a;
+  color:#07458c;
+  font-size:17px;
   font-weight:800;
-  text-align:center;
-  overflow:hidden;
 }
-.service-icon img{
-  max-width:43px;
-  max-height:42px;
-  object-fit:contain;
+
+.services{
+  padding:0;
 }
-.service-text{flex:1;min-width:0}
-.service-text strong{
-  display:block;
-  color:#084784;
-  font-size:12.2px;
-  line-height:1.18;
-}
-.service-text small{
-  display:block;
-  color:#e32222;
-  font-size:9.5px;
-  margin-top:3px;
-  line-height:1.25;
-}
-.service-arrow{
-  width:27px;
-  height:27px;
+
+.service{
+  min-height:74px;
   display:grid;
-  place-items:center;
+  grid-template-columns:60px 1fr 34px;
+  align-items:center;
+  gap:8px;
+  padding:7px 12px;
+  border-bottom:1px solid #e5ebf0;
+}
+
+.service:last-child{
+  border-bottom:0;
+}
+
+.service-icon{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  justify-self:center;
+}
+
+.service-name{
+  font-size:15px;
+  color:#06499a;
+  font-weight:750;
+  line-height:1.15;
+}
+
+.service-url{
+  font-size:12px;
+  color:#e21d25;
+  margin-top:3px;
+  line-height:1.15;
+  word-break:break-word;
+}
+
+.arrow{
+  width:29px;
+  height:29px;
   border-radius:50%;
-  background:#e7f3fc;
-  color:#0a69ad;
-  font-size:23px;
-  line-height:1;
-  flex:0 0 27px;
+  background:#e4f2ff;
+  color:#0872c9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:700;
 }
 
 /* ALERT */
-.alert{
-  margin:0;
-  min-height:100%;
-  background:#fffdf5;
+.alert-card{
+  background:#fff;
 }
-.alert-title{
-  min-height:58px;
-  padding:0 14px;
+
+.alert-head{
+  min-height:68px;
   display:flex;
   align-items:center;
-  gap:10px;
-  color:#d71920;
-  background:#fff5e7;
-  border-bottom:1px solid #f0d7a9;
-  font-size:16px;
-  font-weight:700;
+  gap:14px;
+  padding:12px 18px;
+  border-bottom:1px solid #f0d9aa;
+  color:#e51d25;
+  font-size:21px;
+  font-weight:800;
+  background:linear-gradient(90deg,#fff9ee,#fffdf8);
 }
-.alert-icon{
-  width:31px;
-  height:31px;
-  display:grid;
-  place-items:center;
-  background:#f02228;
+
+.alert-symbol{
+  width:34px;
+  height:34px;
+  background:#ef272f;
   color:#fff;
-  border-radius:4px;
-  font-size:19px;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-weight:900;
+  font-size:22px;
 }
+
 .alert-body{
-  padding:13px 22px 7px;
-  color:#8a5b18;
-  font-size:12px;
-  line-height:1.35;
+  padding:14px 22px 12px;
+  background:#fffdf7;
+  color:#8a5710;
 }
-.alert-body p{margin:0 0 12px}
-.alert-body p:first-child{
-  font-size:17px;
+
+.alert-lead{
+  font-size:19px;
+  line-height:1.25;
   font-weight:700;
-  line-height:1.18;
+  margin-bottom:17px;
 }
-.alert-body a{
-  color:#0669b2;
+
+.alert-row{
+  display:flex;
+  gap:13px;
+  align-items:flex-start;
+  margin:15px 0;
+  font-size:16px;
+  line-height:1.25;
+}
+
+.alert-icon{
+  flex:0 0 28px;
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+}
+
+.alert-row a{
+  color:#0563b5;
   text-decoration:underline;
   font-weight:600;
 }
-.green{color:#16a553;font-weight:800;font-size:22px;vertical-align:middle;margin-right:7px}
-.red{color:#e11b22;font-weight:800;font-size:27px;vertical-align:middle;margin-right:7px}
-.orange{color:#d77a00;font-weight:800;font-size:22px;vertical-align:middle;margin-right:7px}
 
-/* RIGHT COLUMN */
+.alert-row strong{
+  font-weight:800;
+}
+
+/* RIGHT */
+.right-col{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
 .member{
-  min-height:103px;
-  background:linear-gradient(100deg,#eef8ff,#e5f2fb);
-  padding:10px 11px;
+  background:linear-gradient(110deg,#edf7ff,#f7fbff);
+  min-height:132px;
   display:flex;
   align-items:center;
-  gap:13px;
-  border-bottom:1px solid #d6e3eb;
+  padding:10px 14px;
 }
-.member img{
-  width:87px;
-  height:107px;
+
+.member-photo{
+  width:104px;
+  height:112px;
   object-fit:cover;
-  object-position:center top;
-  border:1px solid #b9cbd8;
+  border:1px solid #cbd9e5;
+  border-radius:4px;
+  margin-right:14px;
 }
-.member-info strong{
-  display:block;
-  color:#073f87;
-  font-size:16px;
-  line-height:1.1;
+
+.member-label{
+  color:#064899;
+  font-size:17px;
+  font-weight:800;
+  margin-bottom:4px;
 }
-.member-info span{
-  display:block;
-  color:#243f55;
-  font-size:12px;
-  line-height:1.25;
+
+.member-role{
+  color:#26394b;
+  font-size:15px;
+  line-height:1.2;
 }
+
 .message{
-  margin-top:9px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:6px 13px;
-  border:1px solid #b9d9f0;
-  border-radius:5px;
+  margin-top:10px;
+  border:1px solid #9fc9f1;
   background:#fff;
-  color:#075fa8;
-  font-size:12px;
+  color:#0756a4;
+  border-radius:5px;
+  padding:7px 18px;
+  font-size:15px;
   font-weight:700;
 }
+
+.quick{
+  background:#fff;
+  padding:0 10px 10px;
+}
+
 .quick-title{
-  min-height:38px;
+  height:42px;
   display:flex;
   align-items:center;
-  gap:8px;
-  padding:0 13px;
-  color:#074b8b;
-  font-size:14px;
-  font-weight:700;
+  color:#064a93;
+  font-size:18px;
+  font-weight:800;
 }
-.quick-title b{
-  color:#6638bd;
-  font-size:22px;
+
+.quick-title span{
+  color:#6c20c5;
+  font-size:25px;
+  margin-right:7px;
 }
-.quick{
+
+.quick-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:7px;
-  padding:0 10px 8px;
 }
-.quick a{
-  min-height:59px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:7px;
+
+.quick-item{
+  min-height:62px;
+  border-radius:7px;
   padding:7px 8px;
-  border-radius:6px;
-  border:1px solid #dce5eb;
-}
-.quick strong{
-  font-size:10.5px;
-  line-height:1.15;
-}
-.quick-icon{
-  width:32px;
-  height:32px;
   display:grid;
-  place-items:center;
-  color:#fff;
-  border-radius:6px;
-  font-size:19px;
-  flex:0 0 32px;
+  grid-template-columns:42px 1fr 17px;
+  align-items:center;
+  gap:5px;
+  font-size:13px;
+  font-weight:800;
 }
-.quick-arrow{
-  font-size:22px;
-  font-weight:700;
-}
-.q1{background:#e8f5ff}.q1 .quick-icon{background:#117fd0}.q1 .quick-arrow{color:#1481d2}
-.q2{background:#fff5df}.q2 .quick-icon{background:#f5a500}.q2 .quick-arrow{color:#e99500}
-.q3{background:#e9f8ed}.q3 .quick-icon{background:#1db45b}.q3 .quick-arrow{color:#19a953}
-.q4{background:#f7eaff}.q4 .quick-icon{background:#9b28df}.q4 .quick-arrow{color:#a028e4}
-.india{
-  margin:0 10px 9px;
-  min-height:67px;
-  border:1px solid #dce5eb;
+
+.quick-icon{
+  width:35px;
+  height:35px;
   border-radius:6px;
   display:flex;
   align-items:center;
   justify-content:center;
+  color:#fff;
+  font-size:20px;
+}
+
+.q-blue{background:#e5f3ff}.q-blue .quick-icon{background:#0d8ee7}
+.q-orange{background:#fff3dd}.q-orange .quick-icon{background:#ff9d00}
+.q-green{background:#e6f8e9}.q-green .quick-icon{background:#17b85a}
+.q-purple{background:#f4e9ff}.q-purple .quick-icon{background:#982ce4}
+
+.q-arrow{
+  font-size:22px;
+  color:#1179ca;
+}
+
+.india{
+  margin-top:8px;
+  height:72px;
+  border:1px solid #dce4eb;
+  border-radius:6px;
   background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
-.india span{
-  display:block;
-  text-align:center;
-  font-size:7px;
-  color:#7b8790;
-}
-.india strong{
-  display:block;
-  font-size:25px;
-  letter-spacing:-1.4px;
-  color:#1c2d3a;
+
+.india img{
+  max-width:78%;
+  max-height:64px;
+  object-fit:contain;
 }
 
 /* FOOTER */
-.footer{
-  background:#062f59;
+.footer-nav{
+  background:#06366b;
   color:#fff;
-  border-top:2px solid #0b4f88;
+  text-align:center;
+  padding:9px 10px;
+  font-size:14px;
 }
-.footer-links{
-  min-height:38px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
+
+.footer-nav a{
+  color:#fff;
 }
-.footer-links a{
-  font-size:10px;
-  color:#f0f5f8;
-  padding:0 8px;
-  border-right:1px solid rgba(255,255,255,.35);
-}
-.footer-links a:last-child{border:0}
+
 .footer-bottom{
-  background:#eaf3f8;
-  min-height:38px;
-  display:flex;
-  justify-content:space-between;
+  height:42px;
+  background:#edf7fc;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
   align-items:center;
-  padding:0 4vw;
-  font-size:9px;
-  color:#263b4a;
+  padding:0 45px;
+  color:#182a3b;
+  font-size:12px;
 }
 
-/* ACCESSIBILITY */
-body.large-text{font-size:115%}
-body.contrast .panel,
-body.contrast .masthead,
-body.contrast .hero{filter:contrast(1.12)}
+.footer-bottom div:nth-child(2){
+  text-align:center;
+}
 
-/* RESPONSIVE */
-@media(max-width:1050px){
-  .nav a{padding:0 12px}
-  .hero-copy{width:65%}
-  .hero-screen{right:1%;width:210px}
+.footer-bottom div:nth-child(3){
+  text-align:right;
 }
-@media(max-width:850px){
-  .grid{grid-template-columns:1fr 1fr}
-  .grid .panel:last-child{grid-column:1/-1}
+
+@media(max-width:1000px){
+  .header-inner{padding-left:20px}
+  .nav-inner{padding-left:20px;overflow-x:auto}
+  .nav a{padding:0 15px;white-space:nowrap}
+  .hero-content{padding-left:30px}
+  .main{padding-left:20px;padding-right:20px}
+  .dashboard{grid-template-columns:1fr}
+  .right-col{display:grid;grid-template-columns:1fr 1fr}
+  .emblem{right:15px}
 }
-@media(max-width:680px){
-  .gov-left{font-size:10px}
-  .gov-right{display:none}
-  .masthead{height:72px}
-  .logo{width:55px;height:55px}
-  .brand h1{font-size:20px}
-  .brand h2{font-size:10px}
-  .nav{overflow-x:auto;width:100%}
-  .nav a{white-space:nowrap;padding:0 10px}
-  .hero{height:330px}
-  .hero .container{align-items:flex-start}
-  .hero-copy{width:100%;padding:30px 12px}
-  .hero-copy h3{font-size:26px}
-  .hero-screen{right:6%;bottom:8px;width:190px}
-  .grid{grid-template-columns:1fr}
-  .grid .panel:last-child{grid-column:auto}
-  .footer-bottom{flex-direction:column;gap:5px;padding:8px}
+
+@media(max-width:650px){
+  .top-inner{padding:0 10px}
+  .access{display:none}
+  .header{height:74px}
+  .header-inner{padding-left:12px}
+  .ir-logo{width:62px;height:62px}
+  .brand-main{font-size:20px}
+  .brand-sub{font-size:13px}
+  .emblem{display:none}
+  .hero{height:260px}
+  .hero-content{padding:25px 18px}
+  .hero-title{font-size:28px}
+  .hero-sub{font-size:20px}
+  .hero-desc{width:85%;font-size:14px}
+  .hero-bars{width:80%}
+  .right-col{display:block}
+  .member{margin-bottom:10px}
+  .footer-bottom{height:auto;grid-template-columns:1fr;padding:8px;text-align:center;gap:5px}
+  .footer-bottom div:nth-child(2),
+  .footer-bottom div:nth-child(3){text-align:center}
 }
 </style>
 </head>
 
 <body>
 
-<div class="gov">
-  <div class="container">
-    <div class="gov-left">
-      <strong>भारत सरकार</strong><span>|</span>
-      <span>Government of India</span><span>|</span>
+<!-- GOVERNMENT STRIP -->
+<div class="top-strip">
+  <div class="top-inner">
+    <div class="gov-text">
+      <strong>भारत सरकार</strong> &nbsp;|&nbsp; Government of India &nbsp;|&nbsp;
       <strong>Ministry of Railways</strong>
     </div>
-    <div class="gov-right">
-      <button onclick="fontSize(-1)">A−</button>
-      <button onclick="fontReset()">A</button>
-      <button onclick="fontSize(1)">A+</button>
+
+    <div class="access">
+      <button onclick="changeFont(-1)">A−</button>
+      <button onclick="resetFont()">A</button>
+      <button onclick="changeFont(1)">A+</button>
+      <button onclick="toggleContrast()">Contrast</button>
       <a href="https://aims.indianrailways.gov.in/AIMSStatic/index.html?language=hi">हिन्दी</a>
-      <img class="emblem" src="images/emblemW.png" alt="Government of India emblem">
     </div>
   </div>
 </div>
 
-<header class="masthead">
-  <div class="container">
+<!-- BRAND HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <img class="ir-logo" src="images/indian-railways-logo.png" alt="Indian Railways">
     <div class="brand">
-      <img class="logo" src="images/indian-railways-logo.png" alt="Indian Railways logo">
-      <div>
-        <h1>INDIAN RAILWAYS</h1>
-        <h2>Accounts &amp; Finance Portal</h2>
-      </div>
+      <div class="brand-main">INDIAN RAILWAYS</div>
+      <div class="brand-sub">ACCOUNTS &amp; FINANCE PORTAL</div>
     </div>
+    <img class="emblem" src="images/emblemW.png" alt="Government of India Emblem">
   </div>
 </header>
 
-<nav class="navbar">
-  <div class="container">
-    <ul class="nav">
-      <li><a class="active" href="#">Home</a></li>
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Terms &amp; Conditions</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">RESS Application Privacy Policy</a></li>
-      <li><a href="#">Contact us</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="container">
-    <div class="hero-copy">
-      <h3>Accounts &amp; Finance Portal</h3>
-      <h4>Indian Railways</h4>
-      <p>Enabling efficient, transparent and digital financial management across Indian Railways</p>
-      <div class="value-bars">
-        <i></i><i></i><i></i><i></i><i></i>
-      </div>
-      <div class="values">
-        <span>PEOPLE</span>
-        <span>SAFETY</span>
-        <span>SERVICE</span>
-        <span>GROWTH</span>
-        <span>SUSTAINABILITY</span>
-      </div>
-    </div>
-    <div class="hero-screen">
-      <img src="images/img1.png" alt="AIMS portal">
-    </div>
-  </div>
-</section>
-
-<main>
-  <div class="container">
-    <div class="grid">
-
-      <section class="panel">
-        <div class="panel-head">
-          <h2>Important Portals &amp; Systems</h2>
-          <a href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp" target="_blank">AIMS / IPAS →</a>
-        </div>
-
-        <a class="service" href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp" target="_blank">
-          <div class="service-icon"><img src="images/aims.png" alt="AIMS"></div>
-          <div class="service-text">
-            <strong>Accounting Information Management System</strong>
-            <small>URL:- https://aims.indianrailways.gov.in/IPAS</small>
-          </div>
-          <div class="service-arrow">›</div>
-        </a>
-
-        <a class="service" href="https://aims.indianrailways.gov.in/IPASDW/LoginForms/Login.jsp" target="_blank">
-          <div class="service-icon">DW</div>
-          <div class="service-text">
-            <strong>AIMS Data Warehouse Portal</strong>
-            <small>URL:- https://aims.indianrailways.gov.in/IPASDW</small>
-          </div>
-          <div class="service-arrow">›</div>
-        </a>
-
-        <a class="service" href="http://aims.indianrailways.gov.in/ress" target="_blank">
-          <div class="service-icon">▣</div>
-          <div class="service-text">
-            <strong>Railway Employee Self Service (RESS:Desktop Version)</strong>
-            <small>Employee Self Service is also available on Desktop/Laptop through<br>URL:- https://aims.indianrailways.gov.in/ress</small>
-          </div>
-          <div class="service-arrow">›</div>
-        </a>
-
-        <a class="service" href="https://play.google.com/store/apps/details?id=cris.org.in.ress" target="_blank">
-          <div class="service-icon">▯</div>
-          <div class="service-text">
-            <strong>RESS Mobile app</strong>
-            <small>Android : https://play.google.com/store/apps/details?id=cris.org.in.ress<br>iOS : https://aims.indianrailways.gov.in/Public/Ress</small>
-          </div>
-          <div class="service-arrow">›</div>
-        </a>
-
-        <a class="service" href="https://aims.indianrailways.gov.in/Public/Arpan" target="_blank">
-          <div class="service-icon">ARPAN</div>
-          <div class="service-text">
-            <strong>ARPAN</strong>
-            <small>PPO Download for ARPAN Pensioners<br>https://aims.indianrailways.gov.in/Public/Arpan</small>
-          </div>
-          <div class="service-arrow">›</div>
-        </a>
-
-        <a class="service" href="https://aims.indianrailways.gov.in/MiscRpt/CO6ComplianceController" target="_blank">
-          <div class="service-icon">◉</div>
-          <div class="service-text">
-            <strong>Supplier Bill Status</strong>
-            <small>Supplier Bill Status<br>https://aims.indianrailways.gov.in/MiscRpt/CO6ComplianceController</small>
-          </div>
-          <div class="service-arrow">›</div>
-        </a>
-      </section>
-
-      <section class="panel">
-        <div class="alert">
-          <div class="alert-title">
-            <span class="alert-icon">!</span>
-            <span>ALERT: Beware of Fraudulent Websites!</span>
-          </div>
-          <div class="alert-body">
-            <p>Please be informed that unauthorized websites are impersonating official Indian Railways services.</p>
-            <p><span class="green">✓</span> Access only the official IPAS portal:<br>
-              <a href="https://aims.indianrailways.gov.in/IPAS" target="_blank">https://aims.indianrailways.gov.in/IPAS</a>
-            </p>
-            <p><span class="red">×</span> Do not enter your personal details on any other websites.</p>
-            <p><span class="orange">⚑</span> Report suspicious sites to CRIS immediately.</p>
-            <p>🔒 &nbsp;<strong>Your data security is important to us.</strong></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel">
-        <div class="member">
-          <img src="images/member-finance.png" alt="Ms. Manjusha Jain">
-          <div class="member-info">
-            <strong>Ms. Manjusha Jain</strong>
-            <span>Member Finance</span>
-            <span>Indian Railways</span>
-            <a class="message" href="#">✉ &nbsp; Message</a>
-          </div>
-        </div>
-
-        <div class="quick-title"><b>ϟ</b> Quick Access</div>
-
-        <div class="quick">
-          <a class="q1" href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,5,377" target="_blank">
-            <span class="quick-icon">▣</span>
-            <strong>Codes &amp;<br>Manuals</strong>
-            <span class="quick-arrow">›</span>
-          </a>
-          <a class="q2" href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?id=0,1,304,366,390" target="_blank">
-            <span class="quick-icon">▤</span>
-            <strong>Circulars<br>(Establishment)</strong>
-            <span class="quick-arrow">›</span>
-          </a>
-          <a class="q3" href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,1,304,366,498" target="_blank">
-            <span class="quick-icon">▤</span>
-            <strong>Circulars<br>(Accounts)</strong>
-            <span class="quick-arrow">›</span>
-          </a>
-          <a class="q4" href="https://pgportal.gov.in" target="_blank">
-            <span class="quick-icon">♣</span>
-            <strong>Public<br>Grievances</strong>
-            <span class="quick-arrow">›</span>
-          </a>
-        </div>
-
-        <div class="india">
-          <a href="http://india.gov.in/" target="_blank">
-            <span>The National portal of India</span>
-            <strong>india.gov.in</strong>
-          </a>
-        </div>
-      </section>
-
-    </div>
-  </div>
-</main>
-
-<footer class="footer">
-  <div class="footer-links">
-    <a href="#">Home</a>
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="active" href="https://aims.indianrailways.gov.in/AIMSStatic/index.html?language=en">⌂&nbsp; Home</a>
     <a href="#">About us</a>
     <a href="#">Terms &amp; Conditions</a>
     <a href="#">Privacy Policy</a>
     <a href="#">RESS Application Privacy Policy</a>
-    <a href="#">Copyright Policy</a>
-    <a href="#">Hyperlink Policy</a>
     <a href="#">Contact us</a>
   </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-image" src="images/chenab-vande-bharat.jpg" alt="Vande Bharat train crossing Chenab Bridge">
+
+  <div class="hero-content">
+    <h1 class="hero-title">Accounts &amp; Finance Portal</h1>
+    <div class="hero-sub">Indian Railways</div>
+    <div class="hero-desc">
+      Enabling efficient, transparent and digital financial management across Indian Railways
+    </div>
+
+    <div class="hero-bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-values">
+      PEOPLE &nbsp;|&nbsp; SAFETY &nbsp;|&nbsp; SERVICE &nbsp;|&nbsp; GROWTH &nbsp;|&nbsp; SUSTAINABILITY
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <div class="dashboard">
+
+    <!-- LEFT: PORTALS -->
+    <section class="card services">
+      <div class="card-title">Important Portals &amp; Systems</div>
+
+      <a class="service" href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp">
+        <img class="service-icon" src="images/aims-icon.png" alt="AIMS">
+        <div>
+          <div class="service-name">Accounting Information Management System</div>
+          <div class="service-url">URL:- https://aims.indianrailways.gov.in/IPAS</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="service" href="https://aims.indianrailways.gov.in/IPASDW/LoginForms/Login.jsp">
+        <img class="service-icon" src="images/data-warehouse-icon.png" alt="Data Warehouse">
+        <div>
+          <div class="service-name">AIMS Data Warehouse Portal</div>
+          <div class="service-url">URL:- https://aims.indianrailways.gov.in/IPASDW</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="service" href="http://aims.indianrailways.gov.in/ress">
+        <img class="service-icon" src="images/ress-desktop-icon.png" alt="RESS Desktop">
+        <div>
+          <div class="service-name">Railway Employee Self Service (RESS:Desktop Version)</div>
+          <div class="service-url">Employee Self Service is also available on Desktop/Laptop through URL:- https://aims.indianrailways.gov.in/ress</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="service" href="https://play.google.com/store/apps/details?id=cris.org.in.ress">
+        <img class="service-icon" src="images/ress-mobile-icon.png" alt="RESS Mobile">
+        <div>
+          <div class="service-name">RESS Mobile app</div>
+          <div class="service-url">Android : https://play.google.com/store/apps/details?id=cris.org.in.ress<br>iOS : https://aims.indianrailways.gov.in/Public/Ress</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="service" href="https://aims.indianrailways.gov.in/Public/Arpan">
+        <img class="service-icon" src="images/arpan-icon.png" alt="ARPAN">
+        <div>
+          <div class="service-name">ARPAN</div>
+          <div class="service-url">PPO Download for ARPAN Pensioners<br>https://aims.indianrailways.gov.in/Public/Arpan</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="service" href="https://aims.indianrailways.gov.in/MiscRpt/CO6ComplianceController">
+        <img class="service-icon" src="images/supplier-bill-status-icon.png" alt="Supplier Bill Status">
+        <div>
+          <div class="service-name">Supplier Bill Status</div>
+          <div class="service-url">Supplier Bill Status<br>https://aims.indianrailways.gov.in/MiscRpt/CO6ComplianceController</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+    </section>
+
+    <!-- CENTRE: SECURITY -->
+    <section class="card alert-card">
+      <div class="alert-head">
+        <span class="alert-symbol">!</span>
+        ALERT: Beware of Fraudulent Websites!
+      </div>
+
+      <div class="alert-body">
+        <div class="alert-lead">
+          Please be informed that unauthorized websites are impersonating official Indian Railways services.
+        </div>
+
+        <div class="alert-row">
+          <span class="alert-icon">✓</span>
+          <div>
+            Access only the official IPAS portal:<br>
+            <a href="https://aims.indianrailways.gov.in/IPAS">https://aims.indianrailways.gov.in/IPAS</a>
+          </div>
+        </div>
+
+        <div class="alert-row">
+          <span class="alert-icon">✕</span>
+          <div>Do not enter your personal details on any other websites.</div>
+        </div>
+
+        <div class="alert-row">
+          <span class="alert-icon">⚑</span>
+          <div>Report suspicious sites to CRIS immediately.</div>
+        </div>
+
+        <div class="alert-row">
+          <span class="alert-icon">🔒</span>
+          <div><strong>Your data security is important to us.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="right-col">
+
+      <section class="card member">
+        <img class="member-photo" src="images/member-finance.png" alt="Ms. Manjusha Jain">
+        <div>
+          <div class="member-label">Ms. Manjusha Jain</div>
+          <div class="member-role">Member Finance<br>Indian Railways</div>
+          <button class="message" type="button">✉ &nbsp; Message</button>
+        </div>
+      </section>
+
+      <section class="card quick">
+        <div class="quick-title"><span>ϟ</span> Quick Access</div>
+
+        <div class="quick-grid">
+
+          <a class="quick-item q-blue" href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,5,377">
+            <span class="quick-icon">▣</span>
+            <span>Codes &amp;<br>Manuals</span>
+            <span class="q-arrow">›</span>
+          </a>
+
+          <a class="quick-item q-orange" href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?id=0,1,304,366,390">
+            <span class="quick-icon">▤</span>
+            <span>Circulars<br>(Establishment)</span>
+            <span class="q-arrow">›</span>
+          </a>
+
+          <a class="quick-item q-green" href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,1,304,366,498">
+            <span class="quick-icon">▤</span>
+            <span>Circulars<br>(Accounts)</span>
+            <span class="q-arrow">›</span>
+          </a>
+
+          <a class="quick-item q-purple" href="https://pgportal.gov.in">
+            <span class="quick-icon">♣</span>
+            <span>Public<br>Grievances</span>
+            <span class="q-arrow">›</span>
+          </a>
+
+        </div>
+
+        <a class="india" href="http://india.gov.in/">
+          <img src="https://www.india.gov.in/sites/upload_files/npi/files/logo_1.png" alt="india.gov.in">
+        </a>
+      </section>
+
+    </aside>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-nav">
+    <a href="https://aims.indianrailways.gov.in/AIMSStatic/index.html?language=en">Home</a>
+    &nbsp;|&nbsp;
+    <a href="#">About us</a>
+    &nbsp;|&nbsp;
+    <a href="#">Terms &amp; Conditions</a>
+    &nbsp;|&nbsp;
+    <a href="#">Privacy Policy</a>
+    &nbsp;|&nbsp;
+    <a href="#">RESS Application Privacy Policy</a>
+    &nbsp;|&nbsp;
+    <a href="#">Copyright Policy</a>
+    &nbsp;|&nbsp;
+    <a href="#">Hyperlink Policy</a>
+    &nbsp;|&nbsp;
+    <a href="#">Contact us</a>
+  </div>
+
   <div class="footer-bottom">
-    <span>© 2023, Ministry of Railways, Government of India</span>
-    <span>Designed &amp; Developed by CRIS</span>
-    <span>Last Updated On : 07-Jan-2026</span>
+    <div>© 2023, Ministry of Railways, Government of India</div>
+    <div>Designed &amp; Developed by CRIS</div>
+    <div>Last Updated On : 07-Jan-2026</div>
   </div>
 </footer>
 
 <script>
-function fontSize(direction){
-  document.body.classList.toggle("large-text", direction > 0);
+let fontScale = 1;
+
+function changeFont(step){
+  fontScale += step * 0.08;
+  fontScale = Math.max(.84, Math.min(1.18, fontScale));
+  document.documentElement.style.fontSize = (16 * fontScale) + "px";
 }
-function fontReset(){
-  document.body.classList.remove("large-text");
+
+function resetFont(){
+  fontScale = 1;
+  document.documentElement.style.fontSize = "16px";
+}
+
+function toggleContrast(){
+  document.body.classList.toggle("high-contrast");
 }
 </script>
 
