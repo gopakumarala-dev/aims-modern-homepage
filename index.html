@@ -279,29 +279,57 @@ button{font-family:inherit;cursor:pointer}
     </a>
   </section>
 
-  <section class="panel">
-    <div class="panel-title"><span>Security Alert</span></div>
-    <div class="security">
-      <div class="alert-box">
-        <div class="alert-head"><span class="alert-icon">!</span> ALERT: Beware of Fraudulent Websites!</div>
-        <div class="alert-body">
-          <div class="alert-lead">Please be informed that unauthorized websites are impersonating official Indian Railways services.</div>
-          <div class="alert-row">
-  <span class="ico">✓</span>
-  <div>
-    Access only the official IPAS portal:<br>
-    <a href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp">
-      https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp
-    </a>
+```html
+<section class="panel">
+  <div class="panel-title">
+    <span>AIMS Login</span>
   </div>
-</div>
-          <div class="alert-row"><span class="ico">×</span><div>Do not enter your personal details on any other websites.</div></div>
-          <div class="alert-row"><span class="ico">⚑</span><div>Report suspicious sites to CRIS immediately.</div></div>
-          <div class="alert-row"><span class="ico">🔒</span><div><strong>Your data security is important to us.</strong></div></div>
+
+  <div class="security">
+    <div class="alert-box">
+      <div class="alert-head">
+        <span class="alert-icon">!</span>
+        Security Alert: Beware of Fraudulent Websites
+      </div>
+      <div class="alert-body">
+        Access AIMS only through the official Indian Railways portal.
+        Never share your password or OTP with unauthorised persons.
+        <div class="alert-row">
+          <span class="ico">✓</span>
+          <div>
+            Official AIMS Login:
+            <a href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp"
+               target="_blank" rel="noopener noreferrer">
+              Open Official Login
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="aims-login-card">
+      <h2>Welcome to AIMS</h2>
+      <p>Accounting Information Management System</p>
+
+      <div class="aims-login-visual">
+        <img src="images/aims-hero-banner.png"
+             alt="Indian Railways AIMS portal banner">
+      </div>
+
+      <p class="aims-login-note">
+        Secure employee authentication is handled by the
+        existing official AIMS application.
+      </p>
+
+      <a class="aims-login-button"
+         href="https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp"
+         target="_blank" rel="noopener noreferrer">
+        Continue to Official AIMS Login
+      </a>
+    </div>
+  </div>
+</section>
+```
 
   <aside class="right">
     <section class="panel profile">
