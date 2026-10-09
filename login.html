@@ -74,11 +74,18 @@ body{margin:0;background:#f3f5f8;color:var(--text);font-family:Arial,Helvetica,s
 <section class="login-card">
 <div class="login-heading"><div class="user-icon" aria-hidden="true">●</div><div><h2>Login to AIMS</h2><p>Accounting Information Management System</p></div></div>
 <div class="login-body">
+
 <form id="loginIdForm">
-<label for="loginId">Login ID</label>
-<input id="loginId" name="loginId" type="text" autocomplete="off" placeholder="Enter your Login ID" required>
-<button class="continue-button" type="submit">Continue &nbsp; ›</button>
+  <label for="loginId">Login ID</label>
+  <input id="loginId" name="loginId" type="text" autocomplete="off"
+         placeholder="Enter your Login ID" required>
+
+  <button class="continue-button" type="button"
+    onclick="window.open('https://aims.indianrailways.gov.in/IPAS/LoginForms/Login.jsp', '_blank', 'noopener')">
+    Continue &nbsp; ›
+  </button>
 </form>
+
 <div id="statusNote" class="status-note" role="status" aria-live="polite">This demonstration page cannot validate your Login ID. Continue to the official AIMS portal to complete the existing secure login process.</div>
 <p class="prototype-note">This is a visual prototype. It does not validate or transmit your Login ID, password, or OTP. The official AIMS portal remains responsible for authentication.</p>
 </div>
@@ -97,10 +104,7 @@ body{margin:0;background:#f3f5f8;color:var(--text);font-family:Arial,Helvetica,s
 <footer class="footer">© Copyright 2026, Accounting Information Management System. All rights reserved.<br>Version: 01.26.10.108609 Release Date: 09-10-2026 08:30 AM<br>Designed &amp; Developed by CRIS</footer>
 </div>
 <script>
-document.getElementById("loginIdForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  document.getElementById("statusNote").classList.add("show");
-});
+
 </script>
 </body>
 </html>
